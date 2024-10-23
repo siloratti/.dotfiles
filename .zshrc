@@ -119,3 +119,4 @@ man() {
   env MANWIDTH=$width \
   man "$@"
 }
+
