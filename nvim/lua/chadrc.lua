@@ -5,7 +5,14 @@
 local M = {}
 
 M.base46 = {
-	theme = "nightlamp",
+  -- dark themes --
+	theme = "ayu_dark",
+  -- theme = "dark_horizon"
+  -- theme = "jellybeans"
+  -- theme = "gatekeeper"
+  -- theme = "radium"
+  -- theme = "tokyonight"
+  -- theme = "yoru"
 
 	-- hl_override = {
 	-- 	Comment = { italic = true },
