@@ -1,0 +1,5 @@
+google-chrome
+opera
+packettracer
+yay
+yay-debug

@@ -6,10 +6,10 @@ local M = {}
 
 M.base46 = {
   -- dark themes --
-	theme = "ayu_dark",
-  -- theme = "dark_horizon"
+	theme = "onedark",
+  -- theme = "onedark"
   -- theme = "jellybeans"
-  -- theme = "gatekeeper"
+  -- theme = "onedark"
   -- theme = "radium"
   -- theme = "tokyonight"
   -- theme = "yoru"
