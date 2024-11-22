@@ -108,11 +108,12 @@ install_aur_packages() {
         [[ -z "$package" || "$package" =~ ^# ]] && continue
         
         # Skip if package is already installed
-        if pacman -Qi "$package" &> /dev/null;{ 
-            then
-            warn "AUR package already installed: $package"
-            continue
-        }
+        if pacman -Qi "$package" &> /dev/null;
+          then
+          warn "AUR package already installed: $package"
+          continue
+        fi
+        
         
         # Install AUR package using yay
         log "Installing AUR package: $package"
