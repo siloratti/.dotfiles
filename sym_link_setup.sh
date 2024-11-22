@@ -41,6 +41,7 @@ cd "$HOME/.dotfiles/.config" || exit 1
 # Change to dotfiles directory, exit if fails
 
 # Create array of directory names
+# mapfile is known as 'readarray'
 mapfile -t config_dirs < <(ls -d */ 2>/dev/null | cut -f1 -d'/')
 # ls -d */          : List only directories
 # cut -f1 -d'/'    : Remove trailing slash

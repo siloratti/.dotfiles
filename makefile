@@ -16,58 +16,58 @@ RESET := \033[0m
 .PHONY: all
 # Default target (runs when you type just 'make')
 all: install setup-dotfiles
-    @echo "$(GREEN)All tasks completed!$(RESET)"
-    @echo "$(YELLOW)Please reboot your system to ensure all changes take effect.$(RESET)"
+	@echo "$(GREEN)All tasks completed!$(RESET)"
+	@echo "$(YELLOW)Please reboot your system to ensure all changes take effect.$(RESET)"
 # The @ symbol prevents the command from being printed before execution
 # Dependencies: 'install' and 'setup-dotfiles' must complete before these echo commands
 
 # --- Installation Targets ---
 .PHONY: install
 install: make-executable-install
-    @echo "$(CYAN)Installing packages...$(RESET)"
-    @./$(INSTALL_SCRIPT)
+	@echo "$(CYAN)Installing packages...$(RESET)"
+	@./$(INSTALL_SCRIPT)
 # Depends on make-executable-install (ensures script is executable)
 
 .PHONY: setup-dotfiles
 setup-dotfiles: make-executable-symlink
-    @echo "$(CYAN)Setting up dotfiles...$(RESET)"
-    @./$(SYMLINK_SCRIPT)
+	@echo "$(CYAN)Setting up dotfiles...$(RESET)"
+	@./$(SYMLINK_SCRIPT)
 # Depends on make-executable-symlink
 
 # --- Script Preparation Targets ---
 .PHONY: make-executable-install
 make-executable-install:
-    @echo "$(CYAN)Making install script executable...$(RESET)"
-    @chmod +x $(INSTALL_SCRIPT)
+	@echo "$(CYAN)Making install script executable...$(RESET)"
+	@chmod +x $(INSTALL_SCRIPT)
 # Makes the installation script executable
 
 .PHONY: make-executable-symlink
 make-executable-symlink:
-  	@echo "$(CYAN)Making symlink script executable...$(RESET)"
-    @chmod +x $(SYMLINK_SCRIPT)
+	@echo "$(CYAN)Making symlink script executable...$(RESET)"
+	@chmod +x $(SYMLINK_SCRIPT)
 # Makes the symlink script executable
 
 # --- Individual Operation Targets ---
 .PHONY: packages-only
 packages-only: make-executable-install
-    @echo "$(CYAN)Running package installation only...$(RESET)"
-    @./$(INSTALL_SCRIPT)
+	@echo "$(CYAN)Running package installation only...$(RESET)"
+	@./$(INSTALL_SCRIPT)
 # Allows running just the package installation
 
 .PHONY: dotfiles-only
 dotfiles-only: make-executable-symlink
-    @echo "$(CYAN)Running dotfiles setup only...$(RESET)"
-    @./$(SYMLINK_SCRIPT)
+	@echo "$(CYAN)Running dotfiles setup only...$(RESET)"
+	@./$(SYMLINK_SCRIPT)
 # Allows running just the dotfiles setup
 
 # --- Cleanup Target ---
 .PHONY: clean
 clean:
-    @echo "$(CYAN)Cleaning up...$(RESET)"
-    @echo "Cleaning package cache..."
-    # Clean pacman cache (--noconfirm prevents prompts)
-    @sudo pacman -Scc --noconfirm
-    # Clean yay cache if yay exists
-    @command -v yay >/dev/null 2>&1 && yay -Scc --noconfirm || echo "yay not installed, skipping AUR cache cleanup"
-    @echo "Removing backup directories..."
-    @rm -rf ~/.config_backup/*
+	@echo "$(CYAN)Cleaning up...$(RESET)"
+	@echo "Cleaning package cache..."
+	# Clean pacman cache (--noconfirm prevents prompts)
+	@sudo pacman -Scc --noconfirm
+	# Clean yay cache if yay exists
+	@command -v yay >/dev/null 2>&1 && yay -Scc --noconfirm || echo "yay not installed, skipping AUR cache cleanup"
+	@echo "Removing backup directories..."
+	@rm -rf ~/.config_backup/*

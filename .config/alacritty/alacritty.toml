@@ -4,7 +4,7 @@
 TERM = "xterm-256color"
 
 [font]
-size = 7.0
+size = 7.2
 
 [font.bold]
 family = "MesloLGS Nerd Font Mono"
