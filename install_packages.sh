@@ -202,3 +202,4 @@ main() {
 
 # Execute main function to start the installation process
 main
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
