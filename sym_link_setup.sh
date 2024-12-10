@@ -66,9 +66,13 @@ ls -la ~/.config/ | grep '^l'         # Show only symbolic links
 #symlinking config files 
 
 # creating an array
-# declare -a files=(".bashrc"".bashrc"".dmrc"".zshrc")
+# declare -a files=(".bashrc"".bash_profile"".dmrc"".zshrc")
 # for file in "${!files[@]}"; # iterating through array
 # do 
 #   echo "${files[$file]} "
 #   ln -s "$HOME/.dotfiles/${files[$file]}" "$HOME/${files[$file]}"
 # done
+ln -s "$HOME/.dotfiles/.bashrc"
+ln -s "$HOME/.dotfiles/.bash_profile"
+ln -s "$HOME/.dotfiles/.zshrc"
+ln -s "$HOME/.dotfiles/.dmrc"
